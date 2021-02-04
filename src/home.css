@@ -1,0 +1,28 @@
+.container {
+  background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.earth {
+    background-image: url('./images/earth.jpg')
+  }
+
+  .cliff {
+    background-image: url('./images/cliff.jpg')
+  }
+
+.canyon {
+  background-image: url('./images/canyon.jpg');
+}
+
+.well {
+  background-image: url('./images/well.jpg');
+}
+
+.lake {
+  background-image: url('./images/lake.jpg')
+}

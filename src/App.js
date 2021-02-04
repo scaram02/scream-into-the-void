@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react'
+import './home.css';
 
-function App() {
+
+
+const App = () => {
+
+const backgrounds = [
+ {bg: "earth"},
+ {bg: "cliff"}, 
+ {bg: "well"},
+ {bg: "canyon"}, 
+ {bg: "lake"}
+]
+
+const [background, setBackground] = useState('earth')
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className={`${background} container`}>
+
+      {backgrounds.map((bg) => (
+        <button key={bg.bg}  onClick={() => setBackground(bg.bg)}>{bg.bg}</button> 
+        ))} 
     </div>
+   
   );
 }
 
