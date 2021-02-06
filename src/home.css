@@ -5,6 +5,8 @@
     background-position: center;
     height: 100vh;
     width: 100vw;
+    
+
 }
 
 textarea {
@@ -14,8 +16,16 @@ resize: none;
 width: 100%;
 height: 35vh;
 padding: 0;
-color: red;
 font-size: 55px;
+text-align: center;
+margin: auto;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+font-family: 'Bebas Neue', cursive;
+/* color: navy */
 }
 
 textarea:focus {
@@ -24,23 +34,40 @@ textarea:focus {
 
 .bg-container {
   display: flex;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
 
+button {
+  padding: 5px 7px;
+  background-color: white;
+  border: none;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  bottom: 20;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .earth {
-    background-image: url('./images/earth.jpg')
+    background-image: url('./images/earth.jpg');
+ 
   }
 
   .cliff {
-    background-image: url('./images/cliff.jpg')
+    background-image: url('./images/cliff.jpg');
+
   }
 
 .canyon {
   background-image: url('./images/canyon.jpg');
+
 }
 
 .well {
   background-image: url('./images/well.jpg');
+
 }
 
 .lake {
