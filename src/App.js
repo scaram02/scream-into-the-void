@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {DebounceInput} from 'react-debounce-input';
 import './home.css';
 
 
@@ -55,27 +56,27 @@ useEffect(() => {
 }, [message]);
 
 
-// the problem is they allload 2 seconds after but if you type multiple letters a second then that doesn't matter, it's still 2 seconds later but shows a message EVERY time you type, not just2 scs after pause. need to see user has STOPPED typing rather than typed, and/or JSUT render the last one
 
-// but actually what I really want is to have the message replace the text.... soooo
 
   return (
-
     <div className={`${background} container`}>
   
-        <textarea style={{color: matchingBg.color}} 
+        <DebounceInput 
+        element="textarea"
+        style={{color: matchingBg.color}} 
         spellCheck="false" 
         type="text" 
         value={scream} 
         onChange={handleScream} 
+        debounceTimeout={1000}
         placeholder="insert scream here"/>
-
+        <h1>{message}</h1>
         <div className="button-container">
         {backgrounds.map((bg) => (
         <button key={bg.bg}  onMouseOver={() => setBackground(`${bg.bg}`)}>{bg.bg}!</button> 
         ))} 
         </div>
-        <h1>{message}</h1>
+      
     </div>
    
   );
