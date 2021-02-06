@@ -26,7 +26,8 @@ left: 0;
 right: 0;
 bottom: 0;
 font-family: 'Bebas Neue', cursive;
-overflow-wrap: anywhere;
+z-index: 1
+
 /* color: navy */
 }
 
@@ -35,13 +36,12 @@ textarea:focus {
 }
 
 h1 {
-  margin-top: 0;
-  margin: auto;
+/* margin-top: 200px; */
+margin: 170px auto auto auto;
 position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
+text-align: center;
+width: 100%;
+font-size: 72px;
 }
 
 .button-container {
@@ -67,7 +67,7 @@ button {
  
   }
 
-  .cliff {
+.cliff {
     background-image: url('./images/cliff.jpg');
 
   }

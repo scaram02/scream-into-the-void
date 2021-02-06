@@ -50,8 +50,10 @@ const handleScream = e => {
 // make the message disappear
 useEffect(() => {
   const timeout = setTimeout(() => setMessage(''), 1000);
+  const hm = setTimeout(() => setScream(''), 1000)
   return () => {
-    clearTimeout(timeout);
+    clearTimeout(timeout, hm);
+    // clearTimeout(hm)
   }
 }, [message]);
 
