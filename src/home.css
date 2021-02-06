@@ -32,7 +32,7 @@ textarea:focus {
   outline: none;
 }
 
-.bg-container {
+.button-container {
   display: flex;
   position: absolute;
   bottom: 8px;
@@ -73,3 +73,12 @@ button {
 .lake {
   background-image: url('./images/lake.jpg')
 }
+
+
+/* textarea placeholder color chrome */
+/* textarea::-webkit-input-placeholder{
+  color:red;
+}
+textarea:-moz-placeholder {
+  color:red;
+} */
