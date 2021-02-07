@@ -1,37 +1,44 @@
 import React, {useEffect, useState} from 'react'
 import {DebounceInput} from 'react-debounce-input';
-import './home.css';
+import './App.css';
 
 
 
 const App = () => {
 
 const backgrounds = [
- {bg: "earth", color: 'rgb(248, 198, 119)'},
- {bg: "cliff", color: 'darkgreen'}, 
- {bg: "well", color: "red"},
- {bg: "canyon", color: 'pink'}, 
+ {bg: "earth", screamColor: 'rgb(248, 198, 119)', messColor: "rgb(50, 168, 82)"},
+ {bg: "cliff", screamColor: 'darkgreen', messColor: "rgb(51, 64, 59)"}, 
+ {bg: "well", screamColor: "rgb(145, 51, 54)", messColor: "rgb(138, 88, 66)"},
+ {bg: "canyon", screamColor: 'pink', messColor: "rgb(7, 35, 57)"}, 
 ]
 
 const messages = [
-  "Dude yeah, I feel that", 
-  "Let it out! That's valid", 
-  "That was a good scream, 10/10", 
-  "You're right about that one",
-  "Rough day at the office?",
-  "That's right. Let it out"
+  `dude yeah, I feel that`, 
+  `let it out! that's valid`, 
+  `that was a good scream. 10/10`, 
+  `you're right about that one`,
+  `rough day at the office?`,
+  `that's right, Let it out`,
+  `bruh`,
+  `uhhh definitely`,
+  `same`, 
+  `tell me about it`,
+  `understandable`, 
+  `good thing you didn't hold back`,
+  'that was satisfying, no?'
 ]
 
 
 
-const [background, setBackground] = useState(`earth`) // good
+const [background, setBackground] = useState(`earth`) 
 const [scream, setScream] = useState('')
 const [message, setMessage] = useState('')
 
 const matchingBg = backgrounds.filter((bg) => bg.bg === background)[0]
 
 const randomMessage = messages[Math.floor(Math.random() * messages.length)]
-const showMessage = scream.toLowerCase().includes("aaa")? `${scream.split(' ')[0]} is right` : randomMessage
+
 
 const handleScream = e => {
   // set scream
@@ -39,7 +46,7 @@ const handleScream = e => {
   setScream(value)
   // set validation message
   const timeout = setTimeout(() => {
-    setMessage(showMessage)
+    setMessage(randomMessage)
   }, 1000);
   return () => {
         clearTimeout(timeout);
@@ -47,13 +54,12 @@ const handleScream = e => {
 }
 
 
-// make the message disappear
+// make the message and scream disappear
 useEffect(() => {
-  const timeout = setTimeout(() => setMessage(''), 1000);
-  const hm = setTimeout(() => setScream(''), 1000)
+  const timeout = setTimeout(() => setMessage(''), 2000);
+  const hm = setTimeout(() => setScream(''), 2000)
   return () => {
     clearTimeout(timeout, hm);
-    // clearTimeout(hm)
   }
 }, [message]);
 
@@ -65,19 +71,25 @@ useEffect(() => {
   
         <DebounceInput 
         element="textarea"
-        style={{color: matchingBg.color}} 
+        style={{color: matchingBg.screamColor}} 
         spellCheck="false" 
         type="text" 
         value={scream} 
         onChange={handleScream} 
-        debounceTimeout={1000}
+        debounceTimeout={2000}
         placeholder="insert scream here"/>
-        <h1>{message}</h1>
+
+        <h1 style={{color: matchingBg.messColor}}>{message}</h1>
+
+      
         <div className="button-container">
         {backgrounds.map((bg) => (
         <button key={bg.bg}  onMouseOver={() => setBackground(`${bg.bg}`)}>{bg.bg}!</button> 
         ))} 
+
         </div>
+        <a href="https://www.linkedin.com/in/amelia-scarbrough/">made with love by Amelia</a>
+
       
     </div>
    
