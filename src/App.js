@@ -9,7 +9,7 @@ const App = () => {
 const backgrounds = [
  {bg: "earth", screamColor: 'rgb(248, 198, 119)', messColor: "rgb(50, 168, 82)"},
  {bg: "cliff", screamColor: 'darkgreen', messColor: "rgb(51, 64, 59)"}, 
- {bg: "well", screamColor: "rgb(145, 51, 54)", messColor: "rgb(138, 88, 66)"},
+//  {bg: "well", screamColor: "rgb(145, 51, 54)", messColor: "rgb(138, 88, 66)"},
  {bg: "canyon", screamColor: 'pink', messColor: "rgb(7, 35, 57)"}, 
 ]
 
@@ -19,7 +19,7 @@ const messages = [
   `that was a good scream. 10/10`, 
   `you're right about that one`,
   `rough day at the office?`,
-  `that's right, Let it out`,
+  `that's right, let it out`,
   `bruh`,
   `uhhh definitely`,
   `same`, 
@@ -77,7 +77,7 @@ useEffect(() => {
         value={scream} 
         onChange={handleScream} 
         debounceTimeout={2000}
-        placeholder="insert scream here"/>
+        placeholder="insert yell here"/>
 
         <h1 style={{color: matchingBg.messColor}}>{message}</h1>
 
