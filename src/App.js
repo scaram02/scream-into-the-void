@@ -88,7 +88,7 @@ useEffect(() => {
         ))} 
 
         </div>
-        <a href="https://www.linkedin.com/in/amelia-scarbrough/">made with love by Amelia</a>
+        <a href="https://www.linkedin.com/in/amelia-scarbrough/">give me a shoutout</a>
 
       
     </div>

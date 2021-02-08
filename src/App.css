@@ -98,24 +98,32 @@ a {
   
   /* textarea placeholder color Chrome */
   textarea::-webkit-input-placeholder{
-    color:rgb(165, 164, 163);
+    color:rgb(218, 216, 241)
   }
+
   textarea:-moz-placeholder {
-    color:orange;
+    color:rgb(218, 216, 241)
   }
 
 
+
+  @media screen and (max-width: 768px){
+      h1 {
+          font-size: 40px;
+          margin-top: 400px;
+      }
+
+    }
 
 
  /* mobile */
  @media screen and (max-width: 480px){
     textarea {
-        font-size: 40px;
-        margin-top: 350px
+        margin-top: 300px
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 36px;
         margin-top: 195px;
     }
 
