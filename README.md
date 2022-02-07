@@ -20,4 +20,6 @@ Clone or fork this Repo
 
 `$ cd scream-into-the-void`
 
+`npm i`
+
  `npm start`
